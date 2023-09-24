@@ -1,24 +1,51 @@
-title: 臺中一中電腦資訊研習社
-markdown: kramdown
-google_analytics: UA-171671457-1
+baseurl: '/'
+permalink: pretty
+title: 'Jekyll Serif'
 
-social-network-links:
-  github: tcirc
-  instagram: tcirc_39th
-  
-# How to display the link to your website in the footer
-# Remove this if you don't want a link in the footer
-# url-pretty: "tcirc.github.io"
+logo:
+  mobile: "images/logo/logo-mobile.svg"
+  mobile_height: "32px"
+  mobile_width: "32px"
+  desktop: "images/logo/logo.svg"
+  desktop_height: "32px"
+  desktop_width: "120px"
 
-# Create a "tags" index page and make tags on each post clickable
-link-tags: true
+home: 
+  limit_services: 6
 
-highlighter: rouge
+collections:
+  services:
+    output: true
+    sort_by: weight
+  team:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "services"
+    values:
+      layout: "service"
+  - scope:
+      path: ""
+      type: "team"
+    values:
+      layout: "team"
+
+sass:
+  style: compressed # possible values: nested expanded compact compressed
+
+plugins:
+  - jekyll-environment-variables
 
 exclude:
-  README.md
-
-# plugins:
-#   - jekyll-sitemap
-
-# theme: jekyll-theme-slate
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - LICENSE.md
+  - LICENSE
+  - README.md
